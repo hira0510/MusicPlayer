@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gWm-jC-Cfv">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Music List View Controller-->
+        <scene sceneID="ZN5-sy-Edt">
+            <objects>
+                <viewController storyboardIdentifier="MusicListViewController" id="gWm-jC-Cfv" customClass="MusicListViewController" customModule="MapleStory" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hId-8L-CL6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="sOP-Ze-rMd">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="M9p-lm-gxP">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3iO-52-Rly">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MusicListCollectionViewCell" reuseIdentifier="MusicListCollectionViewCell" id="53J-7f-3JN" customClass="MusicListCollectionViewCell" customModule="MapleStory" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40u-tB-YIr">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </collectionViewCellContentView>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <segue destination="Ifo-8K-mkf" kind="show" identifier="jump" id="iSH-EH-Jf9"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="gWm-jC-Cfv" id="5Mb-a7-10U"/>
+                                    <outlet property="delegate" destination="gWm-jC-Cfv" id="l4Z-0h-7BR"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gha-AV-Uzb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gha-AV-Uzb" firstAttribute="bottom" secondItem="M9p-lm-gxP" secondAttribute="bottom" id="32D-tG-tbC"/>
+                            <constraint firstItem="M9p-lm-gxP" firstAttribute="top" secondItem="gha-AV-Uzb" secondAttribute="top" id="6OE-6q-7ft"/>
+                            <constraint firstItem="M9p-lm-gxP" firstAttribute="centerX" secondItem="gha-AV-Uzb" secondAttribute="centerX" id="INj-vt-MK2"/>
+                            <constraint firstAttribute="bottom" secondItem="sOP-Ze-rMd" secondAttribute="bottom" id="Jfa-zE-Yzz"/>
+                            <constraint firstItem="M9p-lm-gxP" firstAttribute="centerY" secondItem="gha-AV-Uzb" secondAttribute="centerY" id="Lum-2a-7JX"/>
+                            <constraint firstItem="gha-AV-Uzb" firstAttribute="trailing" secondItem="M9p-lm-gxP" secondAttribute="trailing" id="Pf5-mA-ZLl"/>
+                            <constraint firstItem="sOP-Ze-rMd" firstAttribute="centerX" secondItem="gha-AV-Uzb" secondAttribute="centerX" id="bhn-Mv-YIz"/>
+                            <constraint firstItem="M9p-lm-gxP" firstAttribute="leading" secondItem="gha-AV-Uzb" secondAttribute="leading" id="hsC-aS-SeQ"/>
+                            <constraint firstItem="gha-AV-Uzb" firstAttribute="trailing" secondItem="sOP-Ze-rMd" secondAttribute="trailing" id="leg-bx-dmc"/>
+                            <constraint firstItem="sOP-Ze-rMd" firstAttribute="top" secondItem="hId-8L-CL6" secondAttribute="top" id="sKU-hl-r5A"/>
+                            <constraint firstItem="sOP-Ze-rMd" firstAttribute="leading" secondItem="gha-AV-Uzb" secondAttribute="leading" id="xx6-JJ-99B"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="M9p-lm-gxP" id="rIT-V9-JRE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bs4-Cv-lAG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="838"/>
+        </scene>
+        <!--MusicViewController-->
+        <scene sceneID="4fd-jf-Mfo">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MusicPlayer" referencedIdentifier="MusicViewController" id="Ifo-8K-mkf" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="o4x-FE-zLL"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jo7-Y0-CtU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="787" y="882"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Background" width="375" height="667"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
